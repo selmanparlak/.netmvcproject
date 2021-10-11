@@ -1,0 +1,73 @@
+﻿@model WebApplication2018222012_CÜ.Models.ProductContext
+<div class="first-widget parallax" id="portfolio">
+    <div class="parallax-overlay">
+        <div class="container pageTitle">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <h2 class="page-title">Product</h2>
+                </div> <!-- /.col-md-6 -->
+                <div class="col-md-6 col-sm-6 text-right">
+                    <span class="page-location">Home / Product</span>
+                </div> <!-- /.col-md-6 -->
+            </div> <!-- /.row -->
+        </div> <!-- /.container -->
+    </div> <!-- /.parallax-overlay -->
+</div> <!-- /.pageTitle -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <ul id="filters" class="mixitup-controls">
+                <li class="filter" data-filter="all">All</li>
+                <li class="filter" data-filter="branding">Branding</li>
+                <li class="filter" data-filter="illustration">Illustration</li>
+                <li class="filter" data-filter="business">Business</li>
+                <li class="filter" data-filter="identity">Identity</li>
+            </ul>
+        </div> <!-- /.col-md-12 -->
+    </div> <!-- /.row -->
+</div> <!-- /.container -->
+
+<div class="container">
+    <div class="row">
+        <div class="portfolio-holder" id="Grid">
+            @foreach (var _product in Model.Products)
+            {
+                <div class="portfolio-post col-sm-6 col-md-4 mix illustration">
+                    <div class="thumb-post">
+                        <div class="overlay">
+                            <div class="overlay-inner">
+                                <div class="portfolio-infos">
+                                    <span class="meta-category">@_product.ProductCat</span>
+                                    <h3 class="portfolio-title"><a href=/Home/Productshow/@_product.Id>@_product.Productname</a></h3>
+                                </div>
+                                <div class="portfolio-expand">
+                                    <a class="fancybox" href=@_product.ProductImg title="@_product.Productname">
+                                        <i class="fa fa-expand"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <img src=@_product.ProductImg alt=@_product.Productname>
+                    </div>
+                </div> <!-- /.col-md-4 -->
+              }
+
+
+        </div> <!-- /.portfolio-holder -->
+    </div> <!-- /.row -->
+</div> <!-- /.container -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="pages">
+                <li><a href="#" class="active">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">...</a></li>
+                <li><a href="#">13</a></li>
+            </ul>
+        </div> <!-- /.col-md-12 -->
+    </div> <!-- /.row -->
+</div> <!-- /.container -->
